@@ -5,8 +5,8 @@ package com.in28minutes.learn_spring_framework.game;
  */
 public class GameRunner {
     //private MarioGame game; //this was the tightly coupled portion
-    private SuperContra game;
-    public GameRunner(SuperContra game){
+    private GamingConsole game;
+    public GameRunner(GamingConsole game){
         this.game = game;
     }
     public void run(){

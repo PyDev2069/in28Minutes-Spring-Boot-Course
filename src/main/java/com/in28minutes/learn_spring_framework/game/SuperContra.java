@@ -3,7 +3,7 @@ package com.in28minutes.learn_spring_framework.game;
 /**
  * SuperContra
  */
-public class SuperContra {
+public class SuperContra implements GamingConsole {
     public void up(){
         System.out.println("Go UP");
     }
