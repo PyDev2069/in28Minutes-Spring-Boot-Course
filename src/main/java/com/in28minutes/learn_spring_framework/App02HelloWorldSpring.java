@@ -1,4 +1,5 @@
 package com.in28minutes.learn_spring_framework;
+import java.util.Arrays;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -14,14 +15,18 @@ public class App02HelloWorldSpring {
         System.out.println(context.getBean("name"));
         System.out.println(context.getBean("age"));
         System.out.println(context.getBean("person"));
-        System.out.println(context.getBean("address"));
-
-        //alternative
-        System.out.println(context.getBean(Address.class));
+        System.out.println(context.getBean("address"));        
 
         //calling the mixed up beans
         System.out.println(context.getBean("person2MethodCall"));
         System.out.println(context.getBean("person3Parameters"));
+
+        //alternative
+        System.out.println(context.getBean(Address.class));
+
+
+        //? get bean definition names
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);;
 
     }   
 }

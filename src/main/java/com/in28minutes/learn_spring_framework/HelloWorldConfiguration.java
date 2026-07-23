@@ -2,6 +2,7 @@ package com.in28minutes.learn_spring_framework;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 record Person (String name, int age, Address address) {};
 record Address (String firstLine, String city) {};
@@ -20,19 +21,24 @@ public class HelloWorldConfiguration {
         return new Person("Ravi", 20, new Address("Main Street", "Boston"));
     }
     @Bean
+    @Primary
     public Address address(){
         return new Address("129/Bentinck Street", "Kolkata");
     }
-
+    @Bean(name="address2")
+    public Address address2(){
+        return new Address("Baker Street","London");
+    }
+    
     //making beans from other beans
     @Bean
     public Person person2MethodCall(){
         return new Person(name(), age(), address());
     }
 
-     @Bean
-    public Person person3Parameters(String name, int age, Address address){
-        return new Person(name, age, address );
+    @Bean
+    public Person person3Parameters(String name, int age, Address address2){
+        return new Person(name, age, address2 );
     }
 
 }
