@@ -1,8 +1,13 @@
 package com.in28minutes.learn_spring_framework.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 /**
  * SuperContra
  */
+@Component
+@Qualifier("SuperContraGameQualifier")
 public class SuperContra implements GamingConsole {
     public void up(){
         System.out.println("Go UP");
