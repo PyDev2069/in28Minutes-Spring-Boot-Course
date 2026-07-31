@@ -2,6 +2,7 @@ package com.in28minutes.learn_spring_framework.examples.a1;
 
 import java.util.Arrays;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -17,38 +18,38 @@ class YourBusinessClass{
     Dependency2 dependency2;
 
     
-    //@Autowired
-    public YourBusinessClass(Dependency1 dependency1, Dependency2 dependency2) {
-        System.out.println("Connstuctor Injection on dependency 1 and dependency 2");
-        this.dependency1 = dependency1;
-        this.dependency2 = dependency2;
-    }
-
-    // public String toString(){
-    //     return "Using : " + dependency1 + " And " + dependency2;
+    //@Autowired (optional in modern Spring if only one constructor exists)
+    // public YourBusinessClass(Dependency1 dependency1, Dependency2 dependency2) {
+    //     System.out.println("Connstuctor Injection on dependency 1 and dependency 2");
+    //     this.dependency1 = dependency1;
+    //     this.dependency2 = dependency2;
     // }
+
+    public String toString(){
+        return "Using : " + dependency1 + " And " + dependency2;
+    }
 
     
 
-    // public Dependency1 getDependency1() {
-    //     return dependency1;
-    // }
+    public Dependency1 getDependency1() {
+        return dependency1;
+    }
 
-    // public Dependency2 getDependency2() {
-    //     return dependency2;
-    // }
+    public Dependency2 getDependency2() {
+        return dependency2;
+    }
 
-    // @Autowired
-    // public void setDependency1(Dependency1 dependency1) {
-    //     System.out.println("Setter Injection on dependency 1");
-    //     this.dependency1 = dependency1;
-    // }
+    @Autowired
+    public void setDependency1(Dependency1 dependency1) {
+        System.out.println("Setter Injection on dependency 1");
+        this.dependency1 = dependency1;
+    }
 
-    // @Autowired
-    // public void setDependency2(Dependency2 dependency2) {
-    //     System.out.println("Setter Injection on dependency 2");
-    //     this.dependency2 = dependency2;
-    // }
+    @Autowired
+    public void setDependency2(Dependency2 dependency2) {
+        System.out.println("Setter Injection on dependency 2");
+        this.dependency2 = dependency2;
+    }
 }
 //? Dependency 1
 @Component
