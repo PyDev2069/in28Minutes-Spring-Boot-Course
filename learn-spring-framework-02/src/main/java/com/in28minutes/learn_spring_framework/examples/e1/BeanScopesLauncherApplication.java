@@ -8,15 +8,10 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-class NormalClass {
-
-}
-
+class NormalClass {}
 @Scope(value=ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @Component
-class PrototypeClass {
-
-}
+class PrototypeClass {}
 @Configuration
 @ComponentScan
 public class BeanScopesLauncherApplication{
@@ -30,7 +25,9 @@ public class BeanScopesLauncherApplication{
             System.out.println(context.getBean(NormalClass.class));
             System.out.println(context.getBean(NormalClass.class));
             System.out.println(context.getBean(NormalClass.class));
-
+            for(int i=0; i<5; i++){
+                System.out.println();
+            }
 
             System.out.println("Prototype class beans printing, check the hash codes at the end");
             System.out.println(context.getBean(PrototypeClass.class));

@@ -8,12 +8,10 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-class ClassA{
+class ClassA{}
 
-}
-
-@Component 
 @Lazy
+@Component 
 class ClassB{
     private ClassA classA;
     public ClassB(ClassA classA){
