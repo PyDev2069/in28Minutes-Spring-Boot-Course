@@ -2,9 +2,9 @@ package com.in28minutes.learn_spring_framework.examples.c1;
 
 import java.util.Arrays;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service //? Service Annotation means setting business logic inside this bean 
 public class BusinessCalculationService {
 
     private DataService dataService;
