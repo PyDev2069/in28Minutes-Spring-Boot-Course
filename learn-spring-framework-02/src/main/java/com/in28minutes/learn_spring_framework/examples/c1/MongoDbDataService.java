@@ -3,7 +3,7 @@ package com.in28minutes.learn_spring_framework.examples.c1;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
-@Repository //? Repo annotation means in this bean i am speaking with a database 
+@Repository //* Repo annotation means in this bean i am speaking with a database 
 @Primary
 public class MongoDbDataService implements DataService {
 
